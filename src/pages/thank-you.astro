@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Thank You | Web Design Paphos"
+  description="Thanks for reaching out. We'll be in touch shortly."
+  robots="noindex, nofollow"
+>
+
+  <section class="thankyou">
+    <div class="thankyou-inner">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" style="margin-bottom:1.5rem">
+        <circle cx="12" cy="12" r="11" stroke="#b5722a" stroke-width="1.5"/>
+        <path d="M7 12.5l3.5 3.5 6.5-7" stroke="#b5722a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h1>Message Received</h1>
+      <p>Thanks for getting in touch. We'll review your message and get back to you within one business day.</p>
+      <a href="/" class="btn">Back to Home</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .thankyou {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    background: var(--cream);
+  }
+
+  .thankyou-inner { text-align: center; max-width: 480px; }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    color: var(--warm-dark);
+    margin-bottom: 1rem;
+  }
+
+  p { color: var(--text-body); margin-bottom: 2rem; }
+</style>

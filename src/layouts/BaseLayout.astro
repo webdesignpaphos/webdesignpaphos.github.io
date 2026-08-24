@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  robots?: string;
+}
+
+const { title, description = 'Fast, beautiful, conversion-focused websites for businesses in Paphos and Cyprus. Local SEO, mobile-first, built to grow your business.', canonical, robots } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {canonical && <link rel="canonical" href={canonical} />}
+  {robots && <meta name="robots" content={robots} />}
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">Web Design Paphos</a>
+    <ul class="nav-links">
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#process">How It Works</a></li>
+      <li><a href="/#why">Why Us</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Free Consultation</a></li>
+    </ul>
+  </nav>
+
+  <slot />
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong style="color:rgba(250,247,242,0.5)">Web Design Paphos</strong>. Professional web design for businesses across Paphos &amp; Cyprus.</p>
+  </footer>
+
+</body>
+</html>

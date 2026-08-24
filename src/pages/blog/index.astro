@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+---
+<BaseLayout
+  title="Blog | Web Design Paphos"
+  description="Web design tips, local SEO guides, and digital marketing insights for businesses in Paphos and Cyprus."
+  canonical="https://webdesignpaphos.github.io/blog/"
+>
+
+  <div class="blog-hero">
+    <div class="blog-hero-inner">
+      <span class="label">Insights &amp; Guides</span>
+      <h1>Web Design Blog</h1>
+      <p>Practical tips on web design, local SEO, and growing your business online in Paphos and Cyprus.</p>
+    </div>
+  </div>
+
+  <div class="blog-grid-section">
+    <div class="blog-grid">
+      {posts.map((post) => (
+        <a href={`/${post.slug}/`} class="blog-card">
+          <div class="blog-card-category">{post.data.category}</div>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <div class="blog-card-meta">
+            <span>{post.data.date}</span>
+            <span>{post.data.readTime}</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+
+</BaseLayout>
