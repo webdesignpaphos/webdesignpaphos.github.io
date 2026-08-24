@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webdesign Paphos | Websites That Convert</title>
+  <meta name="description" content="Fast, beautiful, conversion-focused websites for businesses in Paphos and Cyprus. Local SEO, mobile-first, built to grow your business." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark: #0f172a;
+      --dark-2: #1e293b;
+      --light: #f8fafc;
+      --light-2: #ffffff;
+      --accent: #14b8a6;
+      --accent-dark: #0d9488;
+      --text-dark: rgba(255,255,255,0.65);
+      --text-light: #475569;
+      --max: 720px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      background: var(--dark);
+      color: #fff;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-cta:hover { background: var(--accent); color: #fff; }
+
+    /* SECTIONS */
+    section { padding: 5rem 1.5rem; }
+
+    .inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    /* DARK sections */
+    .bg-dark { background: var(--dark); color: #fff; }
+    .bg-dark-2 { background: var(--dark-2); color: #fff; }
+
+    /* LIGHT sections */
+    .bg-light { background: var(--light); color: var(--dark); }
+    .bg-light-2 { background: var(--light-2); color: var(--dark); }
+
+    /* LABEL above heading */
+    .label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* HEADINGS */
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 3.25rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    /* PARAGRAPH */
+    .bg-dark p, .bg-dark-2 p { color: var(--text-dark); }
+    .bg-light p, .bg-light-2 p { color: var(--text-light); }
+
+    p { margin-bottom: 1rem; max-width: 64ch; }
+    p:last-child { margin-bottom: 0; }
+
+    /* HERO */
+    .hero { padding: 6rem 1.5rem 5rem; }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-note {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1rem;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.75rem;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+
+    .btn:hover { background: var(--accent-dark); }
+
+    /* STEPS */
+    .steps { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    .step-num {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    /* SERVICES LIST */
+    .services { list-style: none; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .services li { padding-left: 0; }
+
+    .services .service-title {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .services .service-desc { color: var(--text-dark); margin: 0; }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+
+    .checklist li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      color: var(--text-dark);
+    }
+
+    .checklist li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    /* FAQ */
+    .faq { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    .faq-item h3 { color: var(--dark); margin-bottom: 0.4rem; }
+    .faq-item p { color: var(--text-light); }
+
+    /* CONTACT FORM */
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,0.3); }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--accent); }
+
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+
+    /* FOOTER */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* DIVIDER between steps */
+    .step-divider {
+      width: 2px;
+      height: 2rem;
+      background: rgba(255,255,255,0.08);
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      nav { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">webdesign <span>paphos</span></a>
+    <a href="#contact" class="nav-cta">Free Consultation</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero bg-dark">
+    <div class="inner">
+      <span class="label">Webdesign Paphos</span>
+      <h1>Webdesign Paphos That Turns Clicks Into Customers</h1>
+      <p class="hero-sub">Your website is your hardest-working employee — it never sleeps, never takes a break, and it's the first thing people see. We build fast, beautiful, conversion-focused websites for businesses across Paphos and Cyprus.</p>
+      <a href="#contact" class="btn">Get Your Free Consultation &rarr;</a>
+      <p class="hero-note">No obligation. No jargon. Just a website that works.</p>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="bg-light">
+    <div class="inner">
+      <span class="label">The Problem</span>
+      <h2>Is Your Website Quietly Costing You Business?</h2>
+      <p>Most business owners in Paphos know they need a strong website — but the reality falls short. Maybe yours loads slowly and people leave before it even appears. Maybe it looks broken on a phone, where most of your visitors actually are. Maybe it's buried on page five of Google, or maybe you have no site at all.</p>
+      <p>Here's the hard truth: every day this goes unfixed, potential customers are clicking away — and landing on a competitor who simply made it easier to find and trust them.</p>
+      <p>You don't have a traffic problem. You have a first impression problem. And it's fixable.</p>
+    </div>
+  </section>
+
+  <!-- THE PROMISE -->
+  <section class="bg-dark-2">
+    <div class="inner">
+      <span class="label">The Promise</span>
+      <h2>Imagine a Website That Works While You Sleep</h2>
+      <p>Picture this: a customer searches for what you offer, finds you at the top, clicks through to a site that loads instantly and looks stunning on their phone. Within seconds they trust you — and they get in touch.</p>
+      <p>That's not luck. That's what proper webdesign paphos is supposed to do. Not just a pretty page, but a machine that quietly turns strangers into enquiries, day and night.</p>
+      <p>We promise a website you're genuinely proud to share, built around your goals, and designed from the ground up to convert.</p>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section class="bg-light-2">
+    <div class="inner">
+      <span class="label">The Solution</span>
+      <h2>How We Turn Your Site Into a Growth Engine</h2>
+      <p>Our approach to webdesign paphos comes down to three things: understanding your business, knowing your customers, and designing with real purpose.</p>
+
+      <div class="steps" style="margin-top: 2.5rem;">
+        <div>
+          <span class="step-num">Step 1</span>
+          <h3>We Listen</h3>
+          <p>We start by learning what makes you different, who you're trying to reach, and what a "win" looks like for you — more calls, more bookings, more sales. No two businesses are the same, so no two sites should be either.</p>
+        </div>
+        <div>
+          <span class="step-num">Step 2</span>
+          <h3>We Design &amp; Build</h3>
+          <p>Then we craft a clean, modern, custom website tailored to your brand. Every page is fast, mobile-first, and effortless to navigate. We build in solid SEO foundations from day one, so your site doesn't just look good — it gets found.</p>
+        </div>
+        <div>
+          <span class="step-num">Step 3</span>
+          <h3>You Grow</h3>
+          <p>We launch it, test it, and make sure everything runs smoothly. From there, your website starts doing its job: bringing you enquiries while you focus on running your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="bg-dark">
+    <div class="inner">
+      <span class="label">What We Do</span>
+      <h2>Everything Your Business Needs Online</h2>
+
+      <ul class="services" style="margin-top: 2rem;">
+        <li>
+          <p class="service-title">Custom Website Design</p>
+          <p class="service-desc">Unique, branded designs built for your business, never recycled templates.</p>
+        </li>
+        <li>
+          <p class="service-title">Mobile-First Development</p>
+          <p class="service-desc">Flawless on every phone, tablet, and laptop, because that's where your customers are.</p>
+        </li>
+        <li>
+          <p class="service-title">Local SEO</p>
+          <p class="service-desc">Built to rank in Paphos and across Cyprus, so the right people find you first.</p>
+        </li>
+        <li>
+          <p class="service-title">Speed Optimisation</p>
+          <p class="service-desc">Lightning-fast load times that keep visitors from bouncing.</p>
+        </li>
+        <li>
+          <p class="service-title">Ongoing Support</p>
+          <p class="service-desc">Updates, tweaks, and a real person to talk to whenever you need one.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHO WE HELP -->
+  <section class="bg-light">
+    <div class="inner">
+      <span class="label">Who We Help</span>
+      <h2>Perfect For Growing Businesses in Paphos</h2>
+      <p>Whether you run a restaurant, a law firm, a beauty salon, a construction company, or a holiday rental, our webdesign paphos service is built to fit. We work with startups launching their first site and established businesses ready to leave an outdated one behind.</p>
+      <p>If you want a website that pulls its weight, you're in the right place.</p>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="bg-dark-2">
+    <div class="inner">
+      <span class="label">Why Choose Us</span>
+      <h2>Why Businesses Trust Our Webdesign Paphos Service</h2>
+
+      <ul class="checklist" style="margin-top: 2rem;">
+        <li>Lightning fast — every site is optimised to load in the blink of an eye</li>
+        <li>Found on Google — local SEO baked in from the start</li>
+        <li>Custom, not copied — designs that reflect your brand and stand out</li>
+        <li>Mobile-first — perfect on the devices your customers actually use</li>
+        <li>Real, human support — talk to a person, never a ticket number</li>
+        <li>Built to convert — every element designed to turn visitors into enquiries</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-light-2">
+    <div class="inner">
+      <span class="label">FAQ</span>
+      <h2>Questions? We've Got Answers</h2>
+
+      <div class="faq" style="margin-top: 2.5rem;">
+        <div class="faq-item">
+          <h3>How long does it take to build my website?</h3>
+          <p>Most projects launch within 2–4 weeks, depending on size and how quickly we get your content. We'll give you a clear timeline upfront.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How much does a website cost?</h3>
+          <p>Every project is different, so we quote based on your needs. Book a free consultation and we'll give you an honest, transparent price — no surprises.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Will my website show up on Google?</h3>
+          <p>Yes. Solid SEO foundations are part of every build, so your site is set up to be found by customers searching in Paphos and beyond.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I update the website myself?</h3>
+          <p>Absolutely. We build sites you can manage easily, and we're always here if you'd rather we handle it.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I already have a website?</h3>
+          <p>No problem — we'll assess what you have and either refresh it or rebuild it into something far stronger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="bg-dark">
+    <div class="inner">
+      <span class="label">No Risk</span>
+      <h2>No Risk, No Pressure</h2>
+      <p>Your first consultation is completely free and comes with zero obligation. We'll talk through your goals, show you what's possible, and give you honest advice — whether you work with us or not.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA + CONTACT -->
+  <section class="bg-dark-2" id="contact">
+    <div class="inner">
+      <span class="label">Get Started</span>
+      <h2>Ready For a Website That Grows Your Business?</h2>
+      <p>Stop losing customers to a slow, outdated, or invisible website. Whether you're starting fresh or upgrading, our webdesign paphos team is ready to help you stand out, get found, and get booked.</p>
+
+      <form class="contact-form" action="https://formspree.io/f/xkjwaalr" method="POST">
+        <input type="hidden" name="_next" value="https://webdesignpaphos.github.io/thank-you/" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="business" placeholder="Type of Business" />
+        <textarea name="message" placeholder="Tell us about your website project..."></textarea>
+        <div>
+          <button type="submit" class="btn">Get My Free Consultation &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <strong style="color:rgba(255,255,255,0.45)">Webdesign Paphos</strong>. Professional web design for businesses across Paphos &amp; Cyprus.</p>
+  </footer>
+
+</body>
+</html>
